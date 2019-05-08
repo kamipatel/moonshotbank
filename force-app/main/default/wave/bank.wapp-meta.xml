@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folder>bank</folder>
+    <masterLabel>bank</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>test-djoc2culcddx@example.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <templateOrigin>bank</templateOrigin>
+    <templateVersion>1.0</templateVersion>
+</WaveApplication>

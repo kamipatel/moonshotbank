@@ -1,0 +1,39 @@
+{
+    "outcome": {
+        "failureValue": "No",
+        "goal": "Minimize",
+        "label": "Churn",
+        "name": "Churn__c",
+        "successValue": "Yes",
+        "type": "Text"
+    },
+    "setup": {
+        "outcome": {
+            "type": "text",
+            "name": "Churn__c",
+            "displayName": "Churn",
+            "success": "Yes",
+            "failure": "No",
+            "goal": "Minimize"
+        },
+        "fields": [{
+                "type": "text",
+                "name": "Gender__c"
+            },
+            {
+                "type": "text",
+                "name": "LifeStage__c"
+            },
+            {
+                "type": "text",
+                "name": "MissingMortgagePayments__c"
+            }, {
+                "type": "text",
+                "name": "Sentiment__c"
+            }, {
+                "type": "text",
+                "name": "RetentionTeam__c"
+            }
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "notificationLevel": "",
+  "workflowDefinition": {
+    "register_accountds": {
+      "action": "sfdcRegister",
+      "parameters": {
+        "name": "accountds",
+        "alias": "${App.Datasets.accountds_tp.FullyQualifiedName}",
+        "source": "sfdcDigest_Account"
+      }
+    },
+    "sfdcDigest_Account": {
+      "action": "sfdcDigest",
+      "parameters": {
+        "fields": [
+          {"name": "Gender__c"},
+          {"name": "LifeStage__c"},
+          {"name": "Sentiment__c"},
+          {"name": "RetentionTeam__c"},
+          {"name": "Churn__c"},
+          {"name": "MissingMortgagePayments__c"}
+        ],
+        "object": "Account"
+      }
+    }
+  },
+  "_type": "dataflow",
+  "description": "This is the default Salesforce dataflow.",
+  "MasterLabel": "Default Salesforce Dataflow",
+  "nextRun": "",
+  "WorkflowStatus": "Inactive",
+  "isDeletable": false,
+  "longRunningAlertInMins": "",
+  "DataflowType": "USER",
+  "name": "SalesEdgeEltWorkflow",
+  "_url": "/insights/internal_api/v1.0/esObject/workflow//json",
+  "_uid": ""
+}
