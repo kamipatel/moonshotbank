@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionContext>
+        <action>PredictionHelper</action>
+        <argument>
+            <name>custid</name>
+            <value>&quot;kam&quot;</value>
+        </argument>
+        <argument>
+            <name>sEmail</name>
+            <value>&quot;kamipatel@gmail.com&quot;</value>
+        </argument>
+        <label>PredictChurn</label>
+        <name>PredictChurn</name>
+        <type>apex</type>
+    </actionContext>
+    <contextRecordType>Account</contextRecordType>
+    <filter>
+        <childNode>CustomerRetentionOffers</childNode>
+        <label>IsPotentialChurn</label>
+        <name>IsPotentialChurn</name>
+        <expression>$PredictChurn.total &gt;= 1</expression>
+    </filter>
+    <label>BankAgent</label>
+    <recommendationLoad>
+        <label>CustomerRetentionOffers</label>
+        <name>CustomerRetentionOffers</name>
+        <condition>
+            <field>Recommendation.Category__c</field>
+            <operator>EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>RetentionOffers</value>
+            </value>
+        </condition>
+        <conditionLogic>and</conditionLogic>
+    </recommendationLoad>
+    <union>
+        <childNode>IsPotentialChurn</childNode>
+        <label>Output</label>
+        <name>Output_3b8a4eef877f48ec957ff424600f3324</name>
+    </union>
+</RecommendationStrategy>

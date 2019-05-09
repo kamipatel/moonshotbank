@@ -1,56 +1,62 @@
 {
-  "templateType": "app",
-  "label": "bank",
-  "name": "bank",
-  "description": "",
-  "assetVersion": 46.0,
-  "variableDefinition": "variables.json",
-  "uiDefinition": "ui.json",
-  "rules": [{
-      "type": "templateToApp",
-      "file": "template-to-app-rules.json"
+  "templateType" : "app",
+  "label" : "bank",
+  "name" : "bank",
+  "assetVersion" : 46.0,
+  "variableDefinition" : "variables.json",
+  "uiDefinition" : "ui.json",
+  "rules" : [
+    {
+      "type" : "templateToApp",
+      "file" : "template-to-app-rules.json"
     },
     {
-      "type": "appToTemplate",
-      "file": "app-to-template-rules.json"
+      "type" : "appToTemplate",
+      "file" : "app-to-template-rules.json"
     }
   ],
-  "releaseInfo": {
-    "templateVersion": "1.0",
-    "notesFile": "releaseNotes.html"
+  "releaseInfo" : {
+    "templateVersion" : "1.1",
+    "notesFile" : "releaseNotes.html"
   },
-  "folderDefinition": "folder.json",
-  "externalFiles": [],
-  "lenses": [],
-  "dashboards": [],
-  "eltDataflows": [{
-    "label": "bank Dataflow",
-    "name": "bankDataflow",
-    "condition": "${Variables.Overrides.createDataflow}",
-    "file": "dataflow/bankDataflow.json"
-  }],
-  "datasetFiles": [{
-    "label": "accountds",
-    "name": "accountds_tp",
-    "condition": "${Variables.Overrides.createAllDatasetFiles}",
-    "userXmd": "dataset_files/accountds_XMD.json"
-  }],
-  "storedQueries": [],
-  "imageFiles": [],
-  "extendedTypes": {
-    "discoveryStories": [{
-      "file": "churn-story.json",
-      "label": "Minimize Churn Rate",
-      "name": "accountds_tp"
-    }]
+  "folderDefinition" : "folder.json",
+  "externalFiles" : [ ],
+  "lenses" : [ ],
+  "dashboards" : [ ],
+  "eltDataflows" : [
+    {
+      "label" : "bank",
+      "name" : "bank",
+      "condition" : "${Variables.Overrides.createDataflow}",
+      "file" : "dataflow/bankDataflow.json"
+    }
+  ],
+  "datasetFiles" : [
+    {
+      "label" : "accountds",
+      "name" : "accountds_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/accountds_XMD.json"
+    }
+  ],
+  "storedQueries" : [ ],
+  "imageFiles" : [ ],
+  "extendedTypes" : {
+    "discoveryStories" : [
+      {
+        "label" : "Minimize Churn Rate",
+        "name" : "accountds_tp",
+        "file" : "churn-story.json"
+      }
+    ]
   },
-  "templateDependencies": [],
-  "icons": {
-    "appBadge": {
-      "name": "16.png"
+  "templateDependencies" : [ ],
+  "icons" : {
+    "appBadge" : {
+      "name" : "16.png"
     },
-    "templateBadge": {
-      "name": "default.png"
+    "templateBadge" : {
+      "name" : "default.png"
     }
   }
 }

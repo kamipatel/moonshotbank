@@ -13,26 +13,25 @@
       "action": "sfdcDigest",
       "parameters": {
         "fields": [
-          {"name": "Gender__c"},
-          {"name": "LifeStage__c"},
-          {"name": "Sentiment__c"},
-          {"name": "RetentionTeam__c"},
           {"name": "Churn__c"},
-          {"name": "MissingMortgagePayments__c"}
+          {"name": "LifeStage__c"},
+          {"name": "MissingMortgagePayments__c"},
+          {"name": "RetentionTeam__c"},
+          {"name": "Sentiment__c"}
         ],
         "object": "Account"
       }
     }
   },
   "_type": "dataflow",
-  "description": "This is the default Salesforce dataflow.",
-  "MasterLabel": "Default Salesforce Dataflow",
+  "description": "Datafow Copy",
+  "MasterLabel": "bank",
   "nextRun": "",
   "WorkflowStatus": "Inactive",
-  "isDeletable": false,
+  "isDeletable": true,
   "longRunningAlertInMins": "",
   "DataflowType": "USER",
-  "name": "SalesEdgeEltWorkflow",
+  "name": "bank",
   "_url": "/insights/internal_api/v1.0/esObject/workflow//json",
   "_uid": ""
 }

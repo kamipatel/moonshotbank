@@ -18,10 +18,6 @@
         },
         "fields": [{
                 "type": "text",
-                "name": "Gender__c"
-            },
-            {
-                "type": "text",
                 "name": "LifeStage__c"
             },
             {
