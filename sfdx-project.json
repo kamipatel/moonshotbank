@@ -1,11 +1,15 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true
-    }
-  ],
+  "packageDirectories": [{
+    "path": "force-app",
+    "default": true,
+    "package": "MoonShotBankPkg",
+    "versionName": "ver 0.1",
+    "versionNumber": "0.1.0.NEXT"
+  }],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "45.0"
+  "sourceApiVersion": "46.0",
+  "packageAliases": {
+    "MoonShotBankPkg": "0HoB0000000PB0IKAW"
+  }
 }
