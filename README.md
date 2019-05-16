@@ -8,6 +8,8 @@ sfdx force:user:permset:assign -n BankPerms
 
 sfdx force:data:bulk:upsert -s Account -f ~/demos/Einstein/data/Churn.csv -i extId\_\_c -w 5
 
+## TODO Import Account and Recommendation data
+
 sfdx force:org:open
 
 #sfdx force:org:create -f config/project-scratch-def.json -d 30 -a so

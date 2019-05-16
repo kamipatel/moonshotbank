@@ -1,31 +1,6 @@
-global with sharing class PredictionHelper {
+global with sharing class DiscoveryRecommendationsHelper {
 
 
-global class NbaRequest{
-    @InvocableVariable(required=false)
-    public String recordId;
-}
-
-global class NbaResponse{
-    @InvocableVariable
-    global Double baseLine;
-    @InvocableVariable
-    global Double total;
-}
-
-@InvocableMethod(label='GetChurnPrediction')
-global static List<NbaResponse>GetChurnPrediction(List<NbaRequest> requests)
-{
-    List<NbaResponse> oList = new List<NbaResponse>();
-
-    NbaResponse res = getChurnPredictionHelper(requests[0].recordId);
-
-    System.debug('SmartDataDiscoveryPrediction total - ' + res.total);
-
-    oList.add(res);
-    
-    return oList;
-}
 
 public static NbaResponse getChurnPredictionHelper(String recordId){
 

@@ -23,6 +23,19 @@
     </filter>
     <label>BankAgent</label>
     <recommendationLoad>
+        <label>LoadAll</label>
+        <name>LoadAll</name>
+        <condition>
+            <field>Recommendation.Category__c</field>
+            <operator>NOT_EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>false</value>
+            </value>
+        </condition>
+        <conditionLogic>or</conditionLogic>
+    </recommendationLoad>
+    <recommendationLoad>
         <label>CustomerRetentionOffers</label>
         <name>CustomerRetentionOffers</name>
         <condition>
@@ -30,13 +43,14 @@
             <operator>EQUALS</operator>
             <value>
                 <type>TEXT</type>
-                <value>RetentionOffers</value>
+                <value>AgentAction_ AssignEngagementManager</value>
             </value>
         </condition>
         <conditionLogic>and</conditionLogic>
     </recommendationLoad>
     <union>
         <childNode>IsPotentialChurn</childNode>
+        <childNode>LoadAll</childNode>
         <label>Output</label>
         <name>Output_3b8a4eef877f48ec957ff424600f3324</name>
     </union>
