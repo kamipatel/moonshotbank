@@ -5,7 +5,7 @@ sfdx force:org:create -f config/project-scratch-def.json -a ADK --setdefaultuser
 sfdx force:source:push 
 
 sfdx force:user:permset:assign -n BankPerms
-sfdx force:data:bulk:upsert -s Account -f ./data/Churn.csv -i extId\_\_c -w 5
+sfdx force:data:bulk:upsert -s Account -f ./data/Churn.csv -i extId__c -w 5
 sfdx force:data:tree:import -f ./data/export-demo-Recommendations.json
 
 sfdx force:apex:execute -f config/create-demo-data-setup.apex
