@@ -40,11 +40,6 @@ input.predictionDefinition = '0OR7A0000000001WAA';
 
 Account rec = [select Sentiment__c, LifeStage__c, MissingMortgagePayments__c, RetentionTeam__c from Account where Id =: recordId];
 
-/*List<List<String>> rows = new List<List<String>>{
-    new List<String>{rec.Sentiment__c, rec.LifeStage__c, rec.MissingMortgagePayments__c, rec.RetentionTeam__c}
-};
-*/
-
 List<ConnectApi.SmartDataDiscoveryRowNestedList> li = new List<ConnectApi.SmartDataDiscoveryRowNestedList>();
 
 ConnectApi.SmartDataDiscoveryRowNestedList o = new ConnectApi.SmartDataDiscoveryRowNestedList();
@@ -83,33 +78,5 @@ System.debug('SmartDataDiscoveryPrediction res=' + JSON.serialize(res));
 return res;
 
 } 
-
-@InvocableMethod(label='Dynamic ED recommendations' 
-                    description='Generate dynamic recommendations from ED')
-global static List<List<Recommendation>> invocableMethod(List<String> inputData){
-    List<List<Recommendation>> outputs = new List<List<Recommendation>>();
-    
-    /*
-    List<Recommendation> recs = new List<Recommendation>(); 
-    for (Account account:accounts) {
-        if (account.LastContactDate__c != null){
-            lastContactDate = account.LastContactDate__c;
-            daysSinceLastContact = lastContactDate.daysBetween(todayDate);
-            if (daysSinceLastContact > 30){
-                Recommendation rec = new Recommendation(
-                    Name = account.Name,
-                    Description = 'Connect with the ' + account.Name + ' account, the last interaction was '+ daysSinceLastContact + ' days ago.',
-                    ActionReference = 'simpleFlow',
-                    AcceptanceLabel = 'View'
-                );
-                recs.add(rec);
-            }
-        }
-    }
-    outputs.add(recs);
-    */
-
-    return outputs; 
-}
 
 }

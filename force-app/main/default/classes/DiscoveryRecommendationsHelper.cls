@@ -1,12 +1,8 @@
 global with sharing class DiscoveryRecommendationsHelper {
 
+public static ConnectApi.SmartDataDiscoveryPredictObject getDiscoveryPrediction(String recordId){
 
-
-public static NbaResponse getChurnPredictionHelper(String recordId){
-
-NbaResponse res = new NbaResponse();
-res.baseLine = 0;
-res.total = 0;
+ConnectApi.SmartDataDiscoveryPredictObject res = null;
 
 try{
 
@@ -15,10 +11,6 @@ input.predictionDefinition = '0OR7A0000000001WAA';
 
 Account rec = [select Sentiment__c, LifeStage__c, MissingMortgagePayments__c, RetentionTeam__c from Account where Id =: recordId];
 
-/*List<List<String>> rows = new List<List<String>>{
-    new List<String>{rec.Sentiment__c, rec.LifeStage__c, rec.MissingMortgagePayments__c, rec.RetentionTeam__c}
-};
-*/
 
 List<ConnectApi.SmartDataDiscoveryRowNestedList> li = new List<ConnectApi.SmartDataDiscoveryRowNestedList>();
 
@@ -42,12 +34,10 @@ if(pred != null && pred.predictions != null && pred.predictions.size() > 0){
 
     if(pred.predictions[0] instanceof ConnectApi.SmartDataDiscoveryPredictObject){
         ConnectApi.SmartDataDiscoveryPredictObject po = (ConnectApi.SmartDataDiscoveryPredictObject) pred.predictions[0];
-        res.baseLine = po.prediction.baseLine;
-        res.total = po.prediction.total;
+        res = po;
     }
 }
 
-//PredictionDef parse(String json);
 
 }catch(Exception e){
     System.debug('SmartDataDiscoveryPrediction error=' + e);
@@ -64,26 +54,39 @@ return res;
 global static List<List<Recommendation>> invocableMethod(List<String> inputData){
     List<List<Recommendation>> outputs = new List<List<Recommendation>>();
     
-    /*
-    List<Recommendation> recs = new List<Recommendation>(); 
-    for (Account account:accounts) {
-        if (account.LastContactDate__c != null){
-            lastContactDate = account.LastContactDate__c;
-            daysSinceLastContact = lastContactDate.daysBetween(todayDate);
-            if (daysSinceLastContact > 30){
-                Recommendation rec = new Recommendation(
-                    Name = account.Name,
-                    Description = 'Connect with the ' + account.Name + ' account, the last interaction was '+ daysSinceLastContact + ' days ago.',
-                    ActionReference = 'simpleFlow',
-                    AcceptanceLabel = 'View'
-                );
-                recs.add(rec);
-            }
-        }
-    }
-    outputs.add(recs);
-    */
+    ConnectApi.SmartDataDiscoveryPredictObject pred = getDiscoveryPrediction(inputData[0]);
 
+    List<Recommendation> recs = new List<Recommendation>(); 
+
+    String prescription = '';
+    String delim = '';
+    for (ConnectApi.SmartDataDiscoveryPredictCondition condition : pred.prescriptions) {
+        Decimal d = condition.value;
+
+        for (ConnectApi.SmartDataDiscoveryPredictColumn column : condition.columns) {
+            prescription += ' ' + column.columnName + ' to ' + column.columnValue;
+            System.debug('SmartDataDiscoveryPrediction prescription=' + prescription);  
+
+            Recommendation rec = new Recommendation(
+                        Name = 'Do It',
+                        Description = prescription,
+                        ActionReference = 'RetentionFlow',
+                        AcceptanceLabel = 'Do It'
+                    );
+            recs.add(rec);        
+
+
+        }
+        System.debug('SmartDataDiscoveryPrediction prescription value=' + d);  
+
+    }
+
+    outputs.add(recs);
+    
+    if (pred.prescriptions.size() == 0) {
+        System.debug('SmartDataDiscoveryPrediction No changes recommended');  
+    }
+    
     return outputs; 
 }
 

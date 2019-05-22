@@ -3,12 +3,8 @@
     <actionContext>
         <action>PredictionHelper</action>
         <argument>
-            <name>custid</name>
-            <value>&quot;kam&quot;</value>
-        </argument>
-        <argument>
-            <name>sEmail</name>
-            <value>&quot;kamipatel@gmail.com&quot;</value>
+            <name>recordId</name>
+            <value>$Record.Id</value>
         </argument>
         <label>PredictChurn</label>
         <name>PredictChurn</name>
@@ -19,22 +15,20 @@
         <childNode>CustomerRetentionOffers</childNode>
         <label>IsPotentialChurn</label>
         <name>IsPotentialChurn</name>
-        <expression>$PredictChurn.total &gt;= 1</expression>
+        <expression>$PredictChurn.total &gt; 50.00</expression>
     </filter>
+    <invocableAction>
+        <label>Discovery Recommendations</label>
+        <name>DiscoveryRecommendations</name>
+        <action>DiscoveryRecommendationsHelper</action>
+        <argument>
+            <name>inputData</name>
+            <value>$Record.Id</value>
+        </argument>
+        <isGenerator>true</isGenerator>
+        <type>apex</type>
+    </invocableAction>
     <label>BankAgent</label>
-    <recommendationLoad>
-        <label>LoadAll</label>
-        <name>LoadAll</name>
-        <condition>
-            <field>Recommendation.Category__c</field>
-            <operator>NOT_EQUALS</operator>
-            <value>
-                <type>TEXT</type>
-                <value>false</value>
-            </value>
-        </condition>
-        <conditionLogic>or</conditionLogic>
-    </recommendationLoad>
     <recommendationLoad>
         <label>CustomerRetentionOffers</label>
         <name>CustomerRetentionOffers</name>
@@ -50,7 +44,7 @@
     </recommendationLoad>
     <union>
         <childNode>IsPotentialChurn</childNode>
-        <childNode>LoadAll</childNode>
+        <childNode>DiscoveryRecommendations</childNode>
         <label>Output</label>
         <name>Output_3b8a4eef877f48ec957ff424600f3324</name>
     </union>

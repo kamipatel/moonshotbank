@@ -1,0 +1,27 @@
+{
+    "records": [{
+            "attributes": {
+                "type": "Recommendation",
+                "referenceId": "RecommendationRef1"
+            },
+            "Name": "AssignEngagementManager",
+            "Description": "Assign Engagement Manager",
+            "ActionReference": "NewLoan",
+            "Category__c": "AgentAction_ AssignEngagementManager",
+            "AcceptanceLabel": "Yes",
+            "RejectionLabel": "No"
+        },
+        {
+            "attributes": {
+                "type": "Recommendation",
+                "referenceId": "RecommendationRef2"
+            },
+            "Name": "ZeroPercentLoan",
+            "Description": "Zero Percent Loan",
+            "ActionReference": "NewLoan",
+            "Category__c": "RetentionOffer",
+            "AcceptanceLabel": "Yes",
+            "RejectionLabel": "No"
+        }
+    ]
+}
