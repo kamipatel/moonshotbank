@@ -14,6 +14,8 @@ sfdx force:data:tree:import -f ./data/export-demo-Recommendations.json
 
 sfdx force:org:open
 
+sfdx force:auth:web:login --setdefaultdevhubusername --setalias sc --instanceurl https://test.salesforce.com
+
 ######################################
 
 sfdx force:data:tree:export -q "select Id, name, description, actionReference, Category\_\_c, acceptanceLabel, rejectionLabel, IsActionActive from Recommendation" -x export-demo -d ./data/ -p
