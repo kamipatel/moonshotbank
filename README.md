@@ -8,15 +8,17 @@ sfdx force:user:permset:assign -n BankPerms
 
 sfdx force:data:bulk:upsert -s Account -f ./data/Churn.csv -i extId\_\_c -w 5
 
+sfdx force:data:bulk:upsert -s Account -f data/Churn.csv -w 1 -i extId\_\_c
+
 sfdx force:data:tree:import -f ./data/export-demo-Recommendations.json
 
 ## TODO Import Account and Recommendation data
 
 sfdx force:org:open
 
-sfdx force:auth:web:login --setdefaultdevhubusername --setalias sc --instanceurl https://test.salesforce.com
-
 ######################################
+
+sfdx force:auth:web:login --setdefaultdevhubusername --setalias sc --instanceurl https://test.salesforce.com
 
 sfdx force:data:tree:export -q "select Id, name, description, actionReference, Category\_\_c, acceptanceLabel, rejectionLabel, IsActionActive from Recommendation" -x export-demo -d ./data/ -p
 
