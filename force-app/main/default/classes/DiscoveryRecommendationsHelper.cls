@@ -7,7 +7,9 @@ ConnectApi.SmartDataDiscoveryPredictObject res = null;
 try{
 
 ConnectApi.SmartDataDiscoveryPredictInputRawData input = new ConnectApi.SmartDataDiscoveryPredictInputRawData();
-input.predictionDefinition = '0OR7A0000000001WAA';
+
+edconfig__mdt ed = [select Id, ed__c from edconfig__mdt limit 1];
+input.predictionDefinition = ed.ed__c;
 
 Account rec = [select Sentiment__c, LifeStage__c, MissingMortgagePayments__c, RetentionTeam__c from Account where Id =: recordId];
 
