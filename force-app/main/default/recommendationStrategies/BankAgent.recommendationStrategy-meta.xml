@@ -15,7 +15,7 @@
         <childNode>CustomerRetentionOffers</childNode>
         <label>IsPotentialChurn</label>
         <name>IsPotentialChurn</name>
-        <expression>$PredictChurn.total &gt; 50.00</expression>
+        <expression>$PredictChurn.total &lt; 60.00</expression>
     </filter>
     <invocableAction>
         <label>Discovery Recommendations</label>
@@ -37,7 +37,7 @@
             <operator>EQUALS</operator>
             <value>
                 <type>TEXT</type>
-                <value>AgentAction_ AssignEngagementManager</value>
+                <value>RetentionOffer</value>
             </value>
         </condition>
         <conditionLogic>and</conditionLogic>
