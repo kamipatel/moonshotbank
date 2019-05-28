@@ -2522,7 +2522,6 @@ extId__c,Churn__c,Name,Gender__c,Sentiment__c,MissingMortgagePayments__c,Retenti
 2521,Yes,Deion Armenta,Male,Neutral,No,Engaged,Single
 2522,Yes,Michaela Pai,Female,Negative,No,Not Engaged,Single
 2523,Yes,Noe Mendez Padilla,Female,Neutral,Yes,Engaged,Retired
-2524,Yes,"Ma,Roof el-Sala",Male,Negative,Yes,Not Engaged,Single
 2525,Yes,Jazmine Traylor,Female,Negative,Yes,Engaged,Retired
 2526,Yes,Muslih al-Pashia,Female,Positive,Yes,Engaged,Retired
 2527,Yes,Orin Boisselle,Female,Negative,Yes,Engaged,Family
@@ -2826,7 +2825,6 @@ extId__c,Churn__c,Name,Gender__c,Sentiment__c,MissingMortgagePayments__c,Retenti
 2825,Yes,Elijah Weaver,Female,Neutral,No,Engaged,Single
 2826,Yes,Kristen Clark,Male,Neutral,Yes,Not Engaged,Single
 2827,Yes,Cheyenne Simpson,Female,Negative,No,Not Engaged,Family
-2828,Yes,"Jam,Aan al-Nasser",Female,Negative,Yes,Not Engaged,Single
 2829,Yes,Carolyn Pray,Male,Negative,Yes,Not Engaged,Retired
 2830,Yes,Shaafia el-Muhammed,Male,Neutral,Yes,Engaged,Single
 2831,Yes,Briana Youngblood,Male,Neutral,Yes,Engaged,Single
@@ -9267,7 +9265,6 @@ extId__c,Churn__c,Name,Gender__c,Sentiment__c,MissingMortgagePayments__c,Retenti
 9266,No,Tianna Anderson,Female,Negative,No,Not Engaged,Retired
 9267,No,Jessika Medina,Female,Positive,Yes,Not Engaged,Retired
 9268,No,Austin Longstreth,Female,Positive,No,Engaged,Retired
-9269,No,"Kelsea,Yvonne Piepho",Male,Neutral,Yes,Engaged,Retired
 9270,No,Mark O'Neil,Female,Positive,Yes,Engaged,Family
 9271,No,Lorenzo Boldin,Male,Positive,Yes,Not Engaged,Retired
 9272,No,Roberta Teshome,Female,Neutral,No,Engaged,Retired
@@ -9578,7 +9575,6 @@ extId__c,Churn__c,Name,Gender__c,Sentiment__c,MissingMortgagePayments__c,Retenti
 9577,No,Megan Matthews,Male,Positive,Yes,Engaged,Retired
 9578,No,Sean Gilbert,Male,Negative,Yes,Not Engaged,Family
 9579,No,Saalima al-Shahid,Female,Positive,No,Not Engaged,Family
-9580,No,"Jam,Aan al-Dawood",Male,Positive,No,Engaged,Family
 9581,No,Jesse Herrera,Female,Negative,Yes,Not Engaged,Family
 9582,No,Jubair al-Salek,Female,Positive,Yes,Not Engaged,Family
 9583,No,Lady Diane Nguyen,Male,Positive,No,Engaged,Retired
@@ -10758,7 +10754,6 @@ extId__c,Churn__c,Name,Gender__c,Sentiment__c,MissingMortgagePayments__c,Retenti
 10757,Yes,Luke Harrison,Female,Neutral,No,Not Engaged,Single
 10758,Yes,Haneef el-Shakir,Male,Negative,No,Engaged,Single
 10759,Yes,Shaheed el-Shariff,Female,Negative,Yes,Not Engaged,Single
-10760,Yes,"Ma,Roof el-Ullah",Male,Negative,No,Engaged,Family
 10761,Yes,Ruben Levesque,Female,Negative,Yes,Not Engaged,Family
 10762,Yes,Thaddieus Cross,Male,Positive,Yes,Not Engaged,Retired
 10763,Yes,Victoria Ross,Female,Positive,Yes,Not Engaged,Single
@@ -12917,7 +12912,6 @@ extId__c,Churn__c,Name,Gender__c,Sentiment__c,MissingMortgagePayments__c,Retenti
 12916,Yes,Lena Blanchard,Female,Neutral,No,Not Engaged,Retired
 12917,Yes,Dewon Horton,Female,Neutral,No,Engaged,Single
 12918,Yes,Devin Morris,Female,Positive,Yes,Not Engaged,Retired
-12919,Yes,"Ma,Roof el-Madani",Male,Negative,No,Not Engaged,Single
 12920,Yes,Elliott Bolton,Male,Negative,Yes,Engaged,Single
 12921,Yes,Hiba el-Abbas,Female,Positive,Yes,Engaged,Family
 12922,Yes,Alyssa Robinson,Female,Negative,Yes,Not Engaged,Family
@@ -14775,7 +14769,6 @@ extId__c,Churn__c,Name,Gender__c,Sentiment__c,MissingMortgagePayments__c,Retenti
 14774,No,Christianne Jin,Male,Neutral,No,Not Engaged,Family
 14775,No,A Brieonna Harper,Male,Neutral,No,Engaged,Single
 14776,No,Austin Schneebeck,Male,Positive,Yes,Engaged,Family
-14777,No,"Jam,Aan al-Basher",Female,Negative,Yes,Engaged,Family
 14778,No,Bryce Gavato,Female,Positive,No,Engaged,Retired
 14779,No,Mahasin Maldonado,Male,Positive,No,Engaged,Family
 14780,No,Aalyah Wickware,Female,Neutral,Yes,Engaged,Family
