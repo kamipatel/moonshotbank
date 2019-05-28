@@ -6,9 +6,9 @@ sfdx force:source:push -f
 
 sfdx force:user:permset:assign -n BankPerms
 
-sfdx force:data:bulk:upsert -s Account -f ./data/Churn.csv -i extId\_\_c -w 5
+sfdx force:data:bulk:upsert -s Account -f ./data/cust.csv -i extId\_\_c -w 5
 
-sfdx force:data:bulk:upsert -s Account -f data/Churn.csv -w 1 -i extId\_\_c
+sfdx force:data:bulk:upsert -s Account -f data/cust.csv -w 1 -i extId\_\_c
 
 sfdx force:data:tree:import -f ./data/export-demo-Recommendations.json
 

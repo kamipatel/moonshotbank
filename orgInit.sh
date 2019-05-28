@@ -5,7 +5,7 @@ sfdx force:source:push -f
 sfdx force:apex:execute -f config/create-demo-data-setup.apex
 sfdx force:user:permset:assign -n BankPerms
 sfdx force:data:tree:import -f data/export-demo-Recommendations.json
-sfdx force:data:bulk:upsert -s Account -f data/cust.csv -i extId__c --json --json -w 5
+sfdx force:data:bulk:upsert -s Account -f data/cust.csv -w 1 -i extId__c
 sfdx force:org:open
 
 
