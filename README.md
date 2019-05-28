@@ -1,3 +1,5 @@
+test-n3uctx5tfwx1@example.com
+
 sfdx force:auth:web:login -d -a devhub
 
 sfdx force:org:create -s -f config/project-scratch-def.json -a so

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionContext>
         <action>PredictionHelper</action>
@@ -15,7 +15,7 @@
         <childNode>CustomerRetentionOffers</childNode>
         <label>IsPotentialChurn</label>
         <name>IsPotentialChurn</name>
-        <expression>$PredictChurn.total &lt; 60.00</expression>
+        <expression>$PredictChurn.total &gt; 60.00</expression>
     </filter>
     <invocableAction>
         <label>Discovery Recommendations</label>
