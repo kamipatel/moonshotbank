@@ -6,6 +6,3 @@ sfdx force:source:push
 sfdx force:user:permset:assign -n BankPerms
 sfdx force:data:bulk:upsert -f data/cust.csv -s Account -i extId__c
 sfdx force:data:tree:import -f data/export-demo-Recommendations.json
-sfdx force:org:open
-
-
